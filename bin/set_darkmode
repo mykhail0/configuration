@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Validate mode.
+if [ "dark" != "$1" ] && [ "light" != "$1" ]
+then
+    exit 0
+fi
+
+conf="${HOME}/.config"
+bins="${HOME}/bin"
+
+awk_in_place() {
+    echo "$(awk -f "$1" "$2")" > "$2"
+}
+
+# Set GTK.
+awk_in_place "${bins}/gtk_${1}mode.awk" "${conf}/gtk-3.0/settings.ini"
+
+# Set terminal.
+tty_light_theme="github_light"
+tty_dark_theme="after_glow"
+tty_conf="${conf}/alacritty/alacritty.toml"
+
+if [ "dark" = "$1" ]
+then
+    sed_command="s/${tty_light_theme}/${tty_dark_theme}/g"
+else
+    sed_command="s/${tty_dark_theme}/${tty_light_theme}/g"
+fi
+
+sed -i "$sed_command" "$tty_conf"

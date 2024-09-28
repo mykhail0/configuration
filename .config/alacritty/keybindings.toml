@@ -1,0 +1,5 @@
+[keyboard]
+[[keyboard.bindings]]
+key = "Enter"
+mods = "Super"
+command = { program = "sh", args = ["-c", "~/bin/new_window_same_directory"] }

@@ -1,0 +1,6 @@
+ignore-empty-password
+show-failed-attempts
+daemonize
+image=/tmp/lockscreen.png
+scaling=fill
+color=000000

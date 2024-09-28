@@ -1,0 +1,10 @@
+import = [
+    "~/.config/alacritty/alacritty-theme/themes/github_light.toml",
+    "~/.config/alacritty/keybindings.toml"
+]
+
+[window]
+decorations = "None"
+# Sadly no blur on sway.
+#opacity = 0.9
+blur = true

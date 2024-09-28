@@ -1,0 +1,6 @@
+#!/bin/bash
+
+img=/tmp/lockscreen.png
+
+grim $img
+gm mogrify -blur 5x5 $img

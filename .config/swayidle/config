@@ -1,0 +1,3 @@
+timeout 900 lock
+timeout 1200 'systemctl suspend-then-hibernate'
+before-sleep lock

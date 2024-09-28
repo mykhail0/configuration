@@ -1,0 +1,6 @@
+export PATH="$PATH:$HOME/bin"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export GRIM_DEFAULT_DIR="~/Media/Pictures/Screenshots"
+export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"

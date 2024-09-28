@@ -1,0 +1,15 @@
+#!/bin/sh
+
+dir="${HOME}/Media/Pictures/Screenshots"
+name=$(date +%Y_%m_%d_%H_%M_%S)
+ext="png"
+
+file="${dir}/${name}.${ext}"
+
+if [ "$1" = "--slurp" ]
+then
+    option="-g"
+    dims=$(slurp)
+fi
+
+grim $option ${dims+"$dims"} $file && wl-copy < $file

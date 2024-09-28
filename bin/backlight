@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "+" = "$1" ]
+then
+    PLUS=$1
+elif [ "-" = "$1" ]
+then
+    MINUS=$1
+else
+    exit 0
+fi
+
+maximal=$(brightnessctl max)
+current=$(brightnessctl get)
+current_percent=$((current * 100 / maximal))
+
+brightness_step=$((current_percent < 10 ? 2 : (current_percent < 30 ? 5 : 10)))
+
+brightnessctl set "${PLUS}${brightness_step}%${MINUS}"

@@ -1,0 +1,21 @@
+// Swap Shift for the number row, rearrange parenthesis to be symmetric.
+partial alphanumeric_keys
+xkb_symbols "pro" {
+
+    include "us(basic)"
+    name[Group1]= "English (programmer QWERTY)";
+
+    key <AE01>	{[ asciicircum,  1 ]};
+    key <AE02>	{[ braceleft,    2 ]};
+    key <AE03>	{[ bracketleft,  3 ]};
+    key <AE04>	{[ parenleft,    4 ]};
+    key <AE05>	{[ percent,      5 ]};
+    key <AE06>	{[ exclam,       6 ]};
+    key <AE07>	{[ parenright,   7 ]};
+    key <AE08>	{[ bracketright, 8 ]};
+    key <AE09>	{[ braceright,   9 ]};
+    key <AE10>	{[ dollar,       0 ]};
+
+    key <AD11>	{[ asterisk,   at        ]};
+    key <AD12>	{[ numbersign, ampersand ]};
+};

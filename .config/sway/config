@@ -125,6 +125,10 @@ set $n8 bracketright
 set $n9 braceright
 set $n0 dollar
 
+    # Cycle through workspaces
+    bindsym $mod+Tab workspace next
+    bindsym $mod+Shift+Tab workspace prev
+
     # Switch to workspace
     bindsym $mod+$n1 workspace number 1
     bindsym $mod+$n2 workspace number 2
@@ -211,13 +215,14 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-set $exit "exit: 💤 [s]leep ⏻ [p]oweroff ⭯ [r]eboot 🔒 [l]ock"
+set $exit "🔒 [l]ock 💤 [s]leep 🐻 [h]ibernate ⭯ [r]eboot ⏻ [p]oweroff"
 mode $exit {
     bindsym {
-        s exec systemctl suspend-then-hibernate, mode "default"
-        p exec systemctl poweroff
-        r exec systemctl reboot
         l exec lock, mode "default"
+        s exec systemctl suspend-then-hibernate, mode "default"
+        h exec systemctl hibernate, mode "default"
+        r exec systemctl reboot
+        p exec systemctl poweroff
     
         Return mode "default"
         Escape mode "default"

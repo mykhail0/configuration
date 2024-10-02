@@ -1,4 +1,11 @@
-local o = vim.o
+local v = vim
+local g = v.g
+
+-- Set the <leader> key.
+g.mapleader = " "
+g.maplocalleader = " "
+
+local o = v.o
 
 o.colorcolumn = "80"
 o.relativenumber = true
@@ -10,3 +17,46 @@ o.expandtab = true
 o.smartindent = true
 o.tabstop = tabwidth
 o.shiftwidth = tabwidth
+
+-- reconfigure default splitting directions
+o.splitbelow = true
+o.splitright = true
+
+-- Key mappings
+local k = v.keymap
+
+-- TODO possibly remove these keybindings
+-- with ergo keyboard since CTRL will be more comfortable.
+
+-- Move between windows with <leader>hjkl
+k.set("n", "<leader>h", "<C-w>h")
+k.set("n", "<leader>j", "<C-w>j")
+k.set("n", "<leader>k", "<C-w>k")
+k.set("n", "<leader>l", "<C-w>l")
+
+-- Resize windows with <leader>+-<>
+k.set("n", "<leader>=", "<C-w>+")
+k.set("n", "<leader>-", "<C-w>-")
+k.set("n", "<leader><", "<C-w>5<")
+k.set("n", "<leader>>", "<C-w>5>")
+
+-- Split windows
+k.set("n", "<leader>vs", "<C-w>v")
+k.set("n", "<leader>ss", "<C-w>s")
+
+-- Closing windows
+k.set("n", "<leader>c", "<C-w>c")
+k.set("n", "<leader>o", "<C-w>o")
+
+-- Move current window to a new tab
+k.set("n", "<leader>nt", "<C-w>T")
+
+local api = v.api
+
+api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking text',
+  group = api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    v.highlight.on_yank()
+  end,
+})

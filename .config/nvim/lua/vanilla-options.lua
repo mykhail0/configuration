@@ -18,12 +18,11 @@ o.smartindent = true
 o.tabstop = tabwidth
 o.shiftwidth = tabwidth
 
--- reconfigure default splitting directions
-o.splitbelow = true
-o.splitright = true
-
 -- Key mappings
 local k = v.keymap
+
+-- Remap for compatibility with default tmux prefix.
+k.set("n", "<C-j>", "<C-b>")
 
 -- TODO possibly remove these keybindings
 -- with ergo keyboard since CTRL will be more comfortable.
@@ -40,12 +39,8 @@ k.set("n", "<leader>-", "<C-w>-")
 k.set("n", "<leader><", "<C-w>5<")
 k.set("n", "<leader>>", "<C-w>5>")
 
--- Split windows
-k.set("n", "<leader>vs", "<C-w>v")
-k.set("n", "<leader>ss", "<C-w>s")
-
 -- Closing windows
-k.set("n", "<leader>c", "<C-w>c")
+k.set("n", "<leader>q", "<C-w>c")
 k.set("n", "<leader>o", "<C-w>o")
 
 -- Move current window to a new tab
@@ -53,10 +48,10 @@ k.set("n", "<leader>nt", "<C-w>T")
 
 local api = v.api
 
-api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking text',
-  group = api.nvim_create_augroup('highlight-yank', { clear = true }),
-  callback = function()
-    v.highlight.on_yank()
-  end,
+api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking text",
+	group = api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		v.highlight.on_yank()
+	end,
 })

@@ -5,7 +5,8 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function(config)
-		require("telescope").setup(config.opts)
+		local telescope = require("telescope")
+		telescope.setup(config.opts)
 		local builtin = require("telescope.builtin")
 		local k = vim.keymap
 		k.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
@@ -37,5 +38,6 @@ return {
 		--k.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 		--k.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 		--k.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
+		telescope.load_extension("ui-select")
 	end,
 }

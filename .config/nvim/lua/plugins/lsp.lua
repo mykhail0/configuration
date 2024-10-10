@@ -8,6 +8,8 @@ local servers = {
 	bashls = {},
 }
 
+-- TODO add auto clear of keymaps and so on on LspDetach
+
 return {
 	"neovim/nvim-lspconfig",
 	ft = { "python", "c", "cpp", "rust", "haskell", "lua", "bash", "sh" },

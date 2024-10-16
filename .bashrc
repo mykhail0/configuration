@@ -28,6 +28,8 @@ alias pip='python3 -m pip'
 
 # Popular command, ergonomic alias.
 alias ..='cd ..'
+alias ...='cd ../..'
+alias g='git'
 
 # Configuration files management.
 alias config='git --git-dir="$HOME/.cfg/" --work-tree="$HOME"'

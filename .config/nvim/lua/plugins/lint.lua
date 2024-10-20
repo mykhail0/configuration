@@ -9,8 +9,6 @@ local linters_by_ft = {
 	cpp = { "clangtidy" },
 	rust = { "clippy" },
 	html = { "tidy" },
-	sh = { "shellcheck" },
-	bash = { "shellcheck" },
 }
 
 local v = vim

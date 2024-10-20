@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Add git to bash prompt.
+
+# Configuration.
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+
+# __git_ps1 providers, same file
+git1=/usr/share/git/git-prompt.sh
+git2=/usr/share/git/completion/git-prompt.sh
+
+for f in "$git1" "$git2"
+do
+    if [[ -f "$f" ]]
+    then
+        . "$f"
+        PROMPT_COMMAND+=('PS1_CMD="$(__git_ps1 " (%s)")"')
+        break
+    fi
+done

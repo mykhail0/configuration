@@ -12,7 +12,7 @@ git2=/usr/share/git/completion/git-prompt.sh
 
 for f in "$git1" "$git2"
 do
-    if [[ -f "$f" ]]
+    if [[ -r "$f" ]]
     then
         . "$f"
         PROMPT_COMMAND+=('PS1_CMD="$(__git_ps1 " (%s)")"')

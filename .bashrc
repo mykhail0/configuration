@@ -8,12 +8,11 @@
 # Source additional configurations.
 # git specific
 bash_git_cfg="$XDG_CONFIG_HOME/bash/git"
-[[ -f "$bash_git_cfg" ]] && . "$bash_git_cfg"
+[[ -r "$bash_git_cfg" ]] && . "$bash_git_cfg"
 # completions
 completion="$XDG_CONFIG_HOME/bash/completion"
-# TODO choose needed completions only so that loading is faster (e.g. git)
-# also a bug with have (grub?)
-# [[ -f "$completion" ]] && . "$completion"
+# TODO a bug with have (grub?)
+[[ -r "$completion" ]] && . "$completion"
 
 # Add colors.
 alias ls='ls --color=auto'

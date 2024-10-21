@@ -11,6 +11,7 @@ return {
 		local k = vim.keymap
 		k.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 		k.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+		k.set("n", "<leader>sm", builtin.man_pages, { desc = "[S]earch [M]an pages" })
 		k.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 		k.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 		k.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })

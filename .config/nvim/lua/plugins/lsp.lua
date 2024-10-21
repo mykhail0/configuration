@@ -1,6 +1,7 @@
 -- LSPs' configurations
 local servers = {
 	pyright = {},
+	ruff = {},
 	clangd = {},
 	rust_analyzer = {},
 	hls = {},

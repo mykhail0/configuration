@@ -35,6 +35,7 @@ telegram-desktop
 sway
 swayidle
 swaylock
+swaybg
 waybar
 wofi
 xdg-desktop-portal

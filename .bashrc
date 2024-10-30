@@ -39,6 +39,7 @@ alias pip='python3 -m pip'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias g='git'
+alias firefox='firefox-developer-edition'
 
 # Configuration files management.
 alias config='git --git-dir="$HOME/.cfg/" --work-tree="$HOME"'

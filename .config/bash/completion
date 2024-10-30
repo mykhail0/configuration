@@ -1,7 +1,6 @@
 #!/bin/bash
 
-completions='
-hwclock
+completion='hwclock
 hunspell
 alacritty
 alias
@@ -133,15 +132,15 @@ pkill
 xz
 yt-dlp
 ps
-zramctl
-'
+zramctl'
 
 for f in $completions
 do
-    if [[ -r "$f" ]]
+    ff="/usr/share/bash-completion/completions/$f"
+    if [[ -r "$ff" ]]
     then
-        . "$f" || echo "FAIL $f"
+        . "$ff" || echo "FAIL $ff"
     else
-        echo "no such file: $f"
+        echo "no such file: $ff"
     fi
 done

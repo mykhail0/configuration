@@ -13,6 +13,9 @@ pacman-contrib
 wget
 
 alacritty
+rsync
+ripgrep
+fd
 bash-completion
 bat
 brightnessctl
@@ -25,7 +28,6 @@ slurp --asdeps
 mako
 darkman
 firefox-developer-edition
-firefox-ublock-origin --asdeps
 gimp
 mpv
 yt-dlp
@@ -44,6 +46,7 @@ xdg-desktop-portal-wlr
 
 llvm
 clang
+valgrind
 rustup
 gdb
 lldb

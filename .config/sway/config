@@ -19,8 +19,7 @@ set $menu "wofi -i --show drun,run"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output LVDS-1 bg ~/Media/Pictures/Wallpapers/night-sky-clouds-sunset-scenery-digital-art-hd-wallpaper-uhdpaper.com-770@0@i.jpg fill
-# output HDMI-A-1 bg ~/Media/Pictures/Wallpapers/night-sky-stars-clouds-scenery-landscape-anime-digital-art-hd-wallpaper-uhdpaper.com-768@0@i.jpg fill
+output "*" bg ~/Media/Pictures/Wallpapers/1363709.png fill
 
 #
 # Example configuration:

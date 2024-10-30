@@ -19,6 +19,7 @@ brightnessctl
 gammastep
 gnome-keyring
 greetd
+greetd-tuigreet
 grim
 slurp --asdeps
 mako

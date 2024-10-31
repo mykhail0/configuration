@@ -218,8 +218,10 @@ set $exit "🔒 [l]ock 💤 [s]leep 🐻 [h]ibernate ⭯ [r]eboot ⏻ [p]oweroff
 mode $exit {
     bindsym {
         l exec lock, mode "default"
-        s exec systemctl suspend-then-hibernate, mode "default"
-        h exec systemctl hibernate, mode "default"
+        # No hibernation for the dual boot system.
+        s exect systemctl suspend, mode "default"
+        # s exec systemctl suspend-then-hibernate, mode "default"
+        # h exec systemctl hibernate, mode "default"
         r exec systemctl reboot
         p exec systemctl poweroff
     
@@ -231,27 +233,8 @@ mode $exit {
 
 bindsym $mod+x mode $exit
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-#bar swaybar_command waybar
-bar {
-    #position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %a %H:%M:%S'; do sleep 1; done
-    swaybar_command waybar
-
-    #colors {
-        #statusline #ffffff
-        #background #323232
-        #inactive_workspace #32323200 #32323200 #5c5c5c
-    #}
-}
-
 include /etc/sway/config.d/*
 
 exec ~/.config/autostart/autostart.sh
-exec dex -a
+exec systemctl start --user sway.service
+#exec dex -a

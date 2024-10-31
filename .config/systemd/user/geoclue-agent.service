@@ -1,0 +1,11 @@
+[Unit]
+Description=GeoClue agent
+Documentation=man:geoclue(5)
+After=geoclue.target
+
+[Service]
+ExecStart=/usr/lib/geoclue-2.0/demos/agent
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

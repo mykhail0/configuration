@@ -13,6 +13,7 @@ pacman-contrib
 wget
 
 alacritty
+graphicsmagick
 rsync
 ripgrep
 fd
@@ -21,8 +22,6 @@ bat
 brightnessctl
 gammastep
 gnome-keyring
-greetd
-greetd-tuigreet
 grim
 slurp --asdeps
 mako

@@ -8,3 +8,6 @@ decorations = "None"
 # Sadly no blur on sway.
 #opacity = 0.9
 blur = true
+
+[font]
+size = 15.0

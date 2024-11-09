@@ -1,3 +1,4 @@
 timeout 900 lock
-timeout 1200 'systemctl suspend-then-hibernate'
-before-sleep lock
+timeout 1200 'systemctl suspend'
+before-sleep /home/mykhail0/bin/lock
+lock /home/mykhail0/bin/lock

@@ -79,15 +79,14 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
+#wireplumber,
+#keyboard-state,
 #network,
-#pulseaudio,
 #custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
+#scratchpad {
     padding: 0 10px;
     color: #ffffff;
     background-color: #000000;
@@ -131,25 +130,6 @@ button:hover {
     animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
 label:focus {
     background-color: #000000;
 }
@@ -158,22 +138,10 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#pulseaudio.muted {
-    background-color: #ff0000;
-}
-
 #custom-media {
     background-color: #66cc99;
     color: #2a5c45;
     min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
 }
 
 #temperature.critical {
@@ -192,23 +160,6 @@ label:focus {
 #idle_inhibitor.activated {
     color: #000000;
     background-color: #ffffff;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
 }
 
 #keyboard-state {

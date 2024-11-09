@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
 ~/.config/swaylock/create_lockscreen && swaylock

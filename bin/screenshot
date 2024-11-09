@@ -1,15 +1,18 @@
 #!/bin/sh
 
 dir="${HOME}/Media/Pictures/Screenshots"
-name=$(date +%Y_%m_%d_%H_%M_%S)
+name="$(date +%Y_%m_%d_%H_%M_%S)"
 ext="png"
 
 file="${dir}/${name}.${ext}"
 
-if [ "$1" = "--slurp" ]
-then
-    option="-g"
-    dims=$(slurp)
-fi
+grimslurp() {
+    if [ "$1" = "--slurp" ]
+    then
+        grim -g "$(slurp)" "$file"
+    else
+        grim "$file"
+    fi
+}
 
-grim $option ${dims+"$dims"} $file && wl-copy < $file
+grimslurp "$1" && wl-copy < "$file"

@@ -24,4 +24,8 @@ return {
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{
+		"4e554c4c/darkman.nvim",
+		build = "go build -o bin/darkman.nvim",
+	},
 }

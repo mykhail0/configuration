@@ -10,8 +10,10 @@ texinfo
 tldr
 git
 pacman-contrib
+reflector
 wget
 
+wl-clipboard
 alacritty
 graphicsmagick
 rsync

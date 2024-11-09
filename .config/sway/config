@@ -214,12 +214,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-set $exit "🔒 [l]ock 💤 [s]leep 🐻 [h]ibernate ⭯ [r]eboot ⏻ [p]oweroff"
+set $exit "🔒 [l]ock 💤 [s]leep ⭯ [r]eboot ⏻ [p]oweroff"
 mode $exit {
     bindsym {
         l exec lock, mode "default"
         # No hibernation for the dual boot system.
-        s exect systemctl suspend, mode "default"
+        s exec systemctl suspend, mode "default"
         # s exec systemctl suspend-then-hibernate, mode "default"
         # h exec systemctl hibernate, mode "default"
         r exec systemctl reboot

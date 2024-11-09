@@ -5,7 +5,7 @@ PartOf=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=swayidle -w
+ExecStart=swayidle -wd
 
 [Install]
-WantedBy=sway.target
+WantedBy=sway.service

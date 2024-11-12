@@ -24,8 +24,15 @@ return {
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	--[[
 	{
 		"4e554c4c/darkman.nvim",
 		build = "go build -o bin/darkman.nvim",
+		opts = {
+			change_background = true,
+			send_user_event = false,
+			-- colorscheme = nil, -- can be { dark = "x", light = "y" }
+		},
 	},
+    --]]
 }

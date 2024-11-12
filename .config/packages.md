@@ -56,6 +56,7 @@ strace
 bash-language-server
 lua-language-server
 haskell-language-server
+pyright
 ruff
 mypy
 python-pylint

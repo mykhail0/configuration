@@ -19,7 +19,7 @@ set $menu "wofi -i --show drun,run"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/Media/Pictures/Wallpapers/1363709.png fill
+output "*" bg ~/Media/Pictures/Wallpapers/25aa1a16b78d63f639b04b8427d4f2d6.jpg fill
 
 #
 # Example configuration:
@@ -236,5 +236,5 @@ bindsym $mod+x mode $exit
 include /etc/sway/config.d/*
 
 exec ~/.config/autostart/autostart.sh
-exec systemctl start --user sway.service
+exec_always systemctl --user start sway-session.target
 #exec dex -a

@@ -8,4 +8,4 @@ Type=simple
 ExecStart=swayidle -wd
 
 [Install]
-WantedBy=sway.service
+WantedBy=sway.target

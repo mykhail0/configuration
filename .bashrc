@@ -42,6 +42,6 @@ alias g='git'
 alias firefox='firefox-developer-edition'
 
 # Configuration files management.
-alias config='git --git-dir="$HOME/.cfg/" --work-tree="$HOME"'
+alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 PS1='\u@\h \W${PS1_CMD} $? \$ '

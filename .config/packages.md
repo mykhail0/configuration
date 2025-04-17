@@ -14,6 +14,8 @@ reflector
 wget
 
 wl-clipboard
+fcitx5
+fcitx5-configtool
 alacritty
 graphicsmagick
 rsync
@@ -25,7 +27,7 @@ brightnessctl
 gammastep
 gnome-keyring
 grim
-slurp --asdeps
+slurp
 mako
 darkman
 firefox-developer-edition
@@ -33,7 +35,6 @@ gimp
 mpv
 yt-dlp
 neovim
-networkmanager
 telegram-desktop
 sway
 swayidle

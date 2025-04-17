@@ -46,6 +46,8 @@ input type:touchpad {
     tap enabled
 }
 
+input type:keyboard xkb_numlock enabled
+
 ### Key bindings
 #
 # Basics:
@@ -236,5 +238,5 @@ bindsym $mod+x mode $exit
 include /etc/sway/config.d/*
 
 exec ~/.config/autostart/autostart.sh
-exec_always systemctl --user start sway-session.target
+exec_always systemctl --user start sway.target
 #exec dex -a

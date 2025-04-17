@@ -12,10 +12,12 @@ git
 pacman-contrib
 reflector
 wget
+dash
 
 wl-clipboard
 fcitx5
-fcitx5-configtool
+fcitx5-configtool --asdeps
+fcitx5-chinese-addons --asdeps
 alacritty
 graphicsmagick
 rsync
@@ -27,7 +29,7 @@ brightnessctl
 gammastep
 gnome-keyring
 grim
-slurp
+slurp --asdeps
 mako
 darkman
 firefox-developer-edition

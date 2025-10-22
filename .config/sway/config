@@ -19,7 +19,8 @@ set $menu "wofi -i --show drun,run"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/Media/Pictures/Wallpapers/25aa1a16b78d63f639b04b8427d4f2d6.jpg fill
+# output "*" bg ~/Media/Pictures/Wallpapers/25aa1a16b78d63f639b04b8427d4f2d6.jpg fill
+output "*" bg ~/Media/Pictures/Wallpapers/1198590-1920x1080-desktop-1080p-studio-ghibli-background-image.jpg fill
 
 #
 # Example configuration:
@@ -44,8 +45,8 @@ output "*" bg ~/Media/Pictures/Wallpapers/25aa1a16b78d63f639b04b8427d4f2d6.jpg f
 
 input type:touchpad {
     tap enabled
+    events disabled_on_external_mouse
 }
-
 input type:keyboard xkb_numlock enabled
 
 ### Key bindings

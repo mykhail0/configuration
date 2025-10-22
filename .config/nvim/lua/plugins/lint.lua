@@ -1,10 +1,5 @@
--- TODO
--- You can call `try_lint` with a linter name or a list of names to always
--- run specific linters, independent of the `linters_by_ft` configuration
---require("lint").try_lint("cspell")
-
 local linters_by_ft = {
-	python = { "mypy", "ruff", "pylint" },
+	python = { "mypy", "pylint" },
 	c = { "clangtidy" },
 	cpp = { "clangtidy" },
 	rust = { "clippy" },

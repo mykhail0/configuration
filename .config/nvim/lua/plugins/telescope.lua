@@ -18,27 +18,11 @@ return {
 		k.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 		k.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 		k.set("n", "<leader>sc", function()
-			builtin.colorscheme({
-				-- Set available to dual themes.
-				-- minimal coloring: quiet
-				-- The best: default
-				-- below doesn't work
-				--[[
-				colors = {
-					"retrobox",
-					"wildcharm",
-					"lunaperche",
-					"quiet",
-					"default",
-				},
-				ignore_builtins = true,
-                --]]
-				enable_preview = true,
-			})
+			builtin.colorscheme({ enable_preview = true })
 		end, { desc = "[S]earch [C]olorscheme" })
-		--k.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-		--k.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-		--k.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
+		k.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+		k.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+		k.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 		telescope.load_extension("ui-select")
 	end,
 }

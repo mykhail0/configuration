@@ -89,7 +89,7 @@ button:hover {
 #scratchpad {
     padding: 0 10px;
     color: #ffffff;
-    background-color: #000000;
+    background-color: rgba(43, 48, 59, 0.5);
 }
 
 #window,

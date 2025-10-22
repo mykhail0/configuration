@@ -5,10 +5,10 @@ local formatters_by_ft = v.tbl_map(function(formatter_config)
 	return formatter_config
 end, {
 	lua = { "stylua" },
-	--python = { "ruff_fix", "ruff_format" },
 	c = { "clang-format" },
 	cpp = { "clang-format" },
 	rust = { "rustfmt" },
+	tex = { "tex-fmt" },
 })
 
 return {
@@ -33,7 +33,11 @@ return {
 		format_on_save = {},
 	},
 	config = function(config)
-		require("conform").setup(config.opts)
+		local conform = require("conform")
+		conform.setup(config.opts)
 		v.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+		conform.formatters["clang-format"] = {
+			append_args = { "--style", "Google" },
+		}
 	end,
 }

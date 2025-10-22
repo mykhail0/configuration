@@ -24,9 +24,6 @@ local k = v.keymap
 -- Remap for compatibility with default tmux prefix.
 k.set("n", "<C-j>", "<C-b>")
 
--- TODO possibly remove these keybindings
--- with ergo keyboard since CTRL will be more comfortable.
-
 -- Move between windows with <leader>hjkl
 k.set("n", "<leader>h", "<C-w>h")
 k.set("n", "<leader>j", "<C-w>j")
@@ -55,3 +52,17 @@ api.nvim_create_autocmd("TextYankPost", {
 		v.highlight.on_yank()
 	end,
 })
+
+-- LSP configuration
+local servers = {
+	"pyright",
+	"ruff",
+	"clangd",
+	"rust_analyzer",
+	"hls",
+	"lua_ls",
+	"bashls",
+	"texlab",
+}
+
+v.lsp.enable(servers)

@@ -59,6 +59,8 @@ strace
 bash-language-server
 lua-language-server
 haskell-language-server
+texlab
+tex-fmt
 pyright
 ruff
 mypy

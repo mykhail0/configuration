@@ -3,6 +3,7 @@
         "prefix": "cp",
         "body": [
             "#include <bits/stdc++.h>",
+            "",
             "using namespace std;",
             "",
             "int main() {",
@@ -16,10 +17,12 @@
         ],
         "description": "Competitive Programming boilerplate code"
     },
+
     "CP boilerplate (interactive)": {
         "prefix": "cpi",
         "body": [
             "#include <bits/stdc++.h>",
+            "",
             "using namespace std;",
             "",
             "int main() {",
@@ -32,6 +35,7 @@
         ],
         "description": "Competitive Programming boilerplate code (interactive)"
     },
+
     "Read vector": {
         "prefix": "rv",
         "body": [
@@ -40,6 +44,7 @@
         ],
         "description": "Read vector from input"
     },
+
     "Read vector function": {
         "prefix": "rvf",
         "body": [
@@ -51,6 +56,7 @@
         ],
         "description": "Read vector from input"
     },
+
     "Print vector": {
         "prefix": "pv",
         "body": [
@@ -62,24 +68,47 @@
         ],
         "description": "Print vector to output"
     },
+
     "Print vector function": {
         "prefix": "pvf",
         "body": [
-            "template<typename T>",
+            "template <typename T>",
             "void print_vector(vector<T> const& v) {",
-            "for (size_t i = 0; i < v.size(); ++i) {",
-            "  if (i > 0) cout << ' ';",
-            "  cout << v[i];",
-            "}",
-            "cout << '\\n';"
+            "  for (size_t i = 0; i < v.size(); ++i) {",
+            "    if (i > 0) cout << ' ';",
+            "    cout << v[i];",
+            "  }",
+            "  cout << '\\n';",
+            "}"
         ],
         "description": "Print vector to output"
     },
+
     "Unsigned long long typedef": {
         "prefix": "ull",
         "body": ["using ull = unsigned long long;"],
         "description": "Typedef for unsigned long long"
     },
+
+    "Points compression": {
+        "prefix": "compr",
+        "body": [
+            "template <typename T>",
+            "vector<size_t> compress(vector<T> const& a) {",
+            "  vector<T> b = a;",
+            "  auto bb = begin(b), be = end(b);",
+            "  sort(bb, be);",
+            "  b.erase(unique(bb, be), be);",
+            "  size_t n = a.size();",
+            "  vector<size_t> compressed(n);",
+            "  for (size_t i = 0; i < n; ++i)",
+            "    compressed[i] = distance(bb, lower_bound(bb, be, a[i]));",
+            "  return compressed;",
+            "}"
+        ],
+        "description": "Compress points to range [0, number of unique points)"
+    },
+
     "Sieve of Eratosthenes": {
         "prefix": "sieve",
         "body": [
@@ -96,5 +125,134 @@
             "}"
         ],
         "description": "Sieve of Eratosthenes to find all primes up to n"
+    },
+
+    "BIT": {
+        "prefix": "fenwick",
+        "body": [
+            "template <typename T, typename BinaryOp>",
+            "class BIT {",
+            "  T _e;",
+            "  BinaryOp _op;",
+            "",
+            " public:",
+            "  vector<T> bit;",
+            "",
+            "  BIT(size_t n, T e, BinaryOp op) : _e(e), _op(op), bit(n) {}",
+            "",
+            "  BIT(vector<T> const& v, T e, BinaryOp op) : BIT(v.size(), e, op) {",
+            "    for (size_t i = 0; i < v.size(); ++i) {",
+            "      bit[i] = _op(v[i], bit[i]);",
+            "      size_t r = i | (i + 1);",
+            "      if (r < v.size()) bit[r] = _op(bit[i], bit[r]);",
+            "    }",
+            "  }",
+            "",
+            "  void update(size_t i, T value) {",
+            "    while (i < bit.size()) {",
+            "      bit[i] = _op(value, bit[i]);",
+            "      i |= i + 1;",
+            "    }",
+            "  }",
+            "",
+            "  T query(size_t r) {",
+            "    T res = _e;",
+            "    ++r;",
+            "    do {",
+            "      --r;",
+            "      res = _op(bit[r], res);",
+            "      r &= r + 1;",
+            "    } while (r > 0);",
+            "    return res;",
+            "  }",
+            "};"
+        ],
+        "description": "Binary Indexed Tree (Fenwick Tree) implementation"
+    },
+
+    "Trie": {
+        "prefix": "trie",
+        "body": [
+            "class Trie {",
+            "  class Vertex {",
+            "   public:",
+            "    array<int, 26> next;",
+            "    bool exists;",
+            "    Vertex() : exists(false) { ranges::fill(next, -1); }",
+            "  };",
+            "",
+            "  vector<Vertex> t;",
+            "",
+            " public:",
+            "  Trie() : t(1) {}",
+            "",
+            "  void insert(string const& word) {",
+            "    int v = 0;",
+            "    for (char cc : word) {",
+            "      int c = cc - 'a';",
+            "      if (t[v].next[c] == -1) {",
+            "        t[v].next[c] = t.size();",
+            "        t.emplace_back();",
+            "      }",
+            "      v = t[v].next[c];",
+            "    }",
+            "    t[v].exists = true;",
+            "  }",
+            "",
+            "  int find(string const& s) {",
+            "    int v = 0;",
+            "    for (char cc : s) {",
+            "      int c = cc - 'a';",
+            "      if (v == -1) break;",
+            "      v = t[v].next[c];",
+            "    }",
+            "    return v;",
+            "  }",
+            "};"
+        ],
+        "description": "Trie (prefix tree) implementation"
+    },
+
+    "Segment Tree": {
+        "prefix": "segtree",
+        "body": [
+            "template <typename T, typename BinaryOp>",
+            "class SegTree {",
+            "  size_t _n;",
+            "  T _e;",
+            "  BinaryOp _op;",
+            "",
+            "  void update(size_t v, size_t tl, size_t tr, size_t i, T value) {",
+            "    if (tl == tr) {",
+            "      a[v] = _op(a[v], value);",
+            "      return;",
+            "    }",
+            "    size_t tm = (tl + tr) / 2, s = 2 * v;",
+            "    if (i <= tm)",
+            "      update(s, tl, tm, i, value);",
+            "    else",
+            "      update(s + 1, tm + 1, tr, i, value);",
+            "    a[v] = _op(a[s], a[s + 1]);",
+            "  }",
+            "",
+            "  T query(size_t v, size_t tl, size_t tr, size_t l, size_t r) {",
+            "    if (l > r) return _e;",
+            "    if (tl == l and tr == r) return a[v];",
+            "    size_t tm = (tl + tr) / 2, s = 2 * v;",
+            "    return _op(query(s, tl, tm, l, min(tm, r)),",
+            "               query(s + 1, tm + 1, tr, max(tm + 1, l), r));",
+            "  }",
+            "",
+            " public:",
+            "  vector<T> a;",
+            "",
+            "  SegTree(size_t n, T e, BinaryOp op) : _n(n), _e(e), _op(op), a(4 * n, e) {}",
+            "",
+            "  void update(size_t i, T value) { update(1, 0, _n - 1, i, value); }",
+            "",
+            "  T query(size_t l, size_t r) { return query(1, 0, _n - 1, l, r); }",
+            "};"
+        ],
+        "description": "Segment Tree implementation"
     }
 }

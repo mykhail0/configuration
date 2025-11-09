@@ -56,6 +56,7 @@ gdb
 lldb
 strace
 
+pre-commit
 bash-language-server
 lua-language-server
 haskell-language-server
@@ -77,6 +78,7 @@ ttf-font-awesome
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+patched nerd font (hack)
 
 aic94xx-firmware
 anki

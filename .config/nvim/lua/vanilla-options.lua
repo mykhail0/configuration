@@ -13,6 +13,13 @@ o.relativenumber = true
 -- tab configuration
 local tabwidth = 4
 
+-- local cwd = v.fn.getcwd(-1, -1)
+
+if v.fn.getcwd(-1, -1) == "/home/mykhail0/studia/mgr/open_spiel" then
+	tabwidth = 2
+	g.python_recommended_style = 0
+end
+
 o.expandtab = true
 o.smartindent = true
 o.tabstop = tabwidth

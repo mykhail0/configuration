@@ -45,3 +45,10 @@ alias firefox='firefox-developer-edition'
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 PS1='\u@\h \W${PS1_CMD} $? \$ '
+
+# OpenSpiel
+# For the python modules in open_spiel.
+PATH_TO_OPEN_SPIEL=/home/mykhail0/studia/mgr/open_spiel
+export PYTHONPATH=$PYTHONPATH:$PATH_TO_OPEN_SPIEL
+# For the Python bindings of Pyspiel
+export PYTHONPATH=$PYTHONPATH:$PATH_TO_OPEN_SPIEL/build/python

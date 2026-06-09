@@ -23,6 +23,7 @@ return {
 		k.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 		k.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 		k.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
+		k.set("n", "<leader>sb", builtin.marks, { desc = "[S]earch marks" })
 		telescope.load_extension("ui-select")
 	end,
 }

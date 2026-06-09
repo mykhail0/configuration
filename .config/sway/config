@@ -116,16 +116,27 @@ input type:keyboard xkb_numlock enabled
 #
 # Workspaces:
 #
-set $n1 asciicircum
-set $n2 braceleft
-set $n3 bracketleft
-set $n4 parenleft
-set $n5 percent
-set $n6 exclam
-set $n7 parenright
-set $n8 bracketright
-set $n9 braceright
-set $n0 dollar
+# set $n1 asciicircum
+# set $n2 braceleft
+# set $n3 bracketleft
+# set $n4 parenleft
+# set $n5 percent
+# set $n6 exclam
+# set $n7 parenright
+# set $n8 bracketright
+# set $n9 braceright
+# set $n0 dollar
+
+set $n1 1
+set $n2 2
+set $n3 3
+set $n4 4
+set $n5 5
+set $n6 6
+set $n7 7
+set $n8 8
+set $n9 9
+set $n0 0
 
     # Cycle through workspaces
     bindsym $mod+Tab workspace next

@@ -44,5 +44,5 @@ return {
 			enable = true,
 		},
 	},
-	main = "nvim-treesitter.configs",
+	main = "nvim-treesitter.config",
 }

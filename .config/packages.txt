@@ -19,6 +19,7 @@ fcitx5
 fcitx5-configtool --asdeps
 fcitx5-chinese-addons --asdeps
 alacritty
+trash-cli
 graphicsmagick
 rsync
 ripgrep
@@ -34,6 +35,7 @@ mako
 darkman
 firefox-developer-edition
 gimp
+anki
 mpv
 yt-dlp
 neovim
@@ -81,7 +83,6 @@ noto-fonts-emoji
 patched nerd font (hack)
 
 aic94xx-firmware
-anki
 ast-firmware
 paru
 upd72020x-fw

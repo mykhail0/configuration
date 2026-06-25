@@ -49,6 +49,7 @@ wofi
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
+geoclue
 
 llvm
 clang
@@ -63,7 +64,7 @@ bash-language-server
 lua-language-server
 haskell-language-server
 texlab
-tex-fmt
+tex-fmt AUR
 pyright
 ruff
 mypy

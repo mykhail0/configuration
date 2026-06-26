@@ -35,6 +35,7 @@ slurp --asdeps
 mako
 darkman
 firefox-developer-edition
+speech-dispatcher
 gimp
 anki
 mpv

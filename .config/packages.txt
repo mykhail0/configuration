@@ -13,6 +13,7 @@ pacman-contrib
 reflector
 wget
 dash
+iwd
 
 wl-clipboard
 fcitx5
